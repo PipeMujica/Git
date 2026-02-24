@@ -1,0 +1,1 @@
+agregar etiquetas details a las datalist (aeródromos)

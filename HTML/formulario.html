@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Inspeccion de Carga Aérea</title>
+  <link rel="stylesheet" href="/CSS/style_form.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body>
+  <form id="fiscaCarga">
+    <header>
+      <table border="1">
+        <th><img src="../IMG/dgac.png" alt="logo DGAC" style="width:85px; vertical-align:middle;"> </th>
+        <th>LISTADO DE FISCALIZACIÓN
+          DE LA CARGA Y CORREO AÉREO</th>
+        <th>
+          <p>Código: R-AVSEC-009</p>
+          <p>Enmienda: 1.0</p>
+          <p>Vigencia: 10.feb.2017</p>
+        </th>
+      </table>
+    </header>
+
+    <br>
+    <fieldset class="ventana">
+      <legend onclick="togContenido(this)">DATOS</legend>
+      <div class="input">
+        <label for="aerodromos">AERODROMO</label>
+        <select name="aerodromos" id="aerodromos" required>
+          <option value="" disabled selected>Seleccione un Aeródromo/Aeropuerto</option>
+          <option value="arica">Chacalluta - Arica</option>
+          <option value="iquique">Diego Aracena - Iquique</option>
+          <option value="calama">El Loa - Calama</option>
+          <option value="antofagasta">Andrés Sabella - Antofagasta</option>
+          <option value="copiapo">Desierto de Atacama - Copiapó</option>
+          <option value="mataveri">Mataveri - Rapa Nui</option>
+          <option value="laSerena">La Florida - La Serena</option>
+          <option value="santiago">Arturo Merino Benitez - Santiago</option>
+          <option value="concepcion">Carriel Sur - Concepción</option>
+          <option value="temuco">La Araucanía - Temuco</option>
+          <option value="valdivia">Pichoy - Valdivia</option>
+          <option value="osorno">Cañal Bajo - Osorno</option>
+          <option value="puertoMontt">El Tepual - Puerto Montt</option>
+          <option value="chiloe">Mocopulli - Chiloé</option>
+          <option value="balmaceda">Balmaceda - Coyahique</option>
+          <option value="puntaArenas">Carlos Ibañez del Campo - Punta Arenas</option>
+        </select>
+      </div>
+      <div class="input">
+        <label>FECHA</label>
+        <input type="date" name="fecha">
+      </div>
+      <div class="input">
+        <label>HORARIO</label>
+        <input type="time" name="hora">
+      </div>
+    </fieldset> <br>
+
+    <fieldset class="ventana">
+      <legend onclick="togContenido(this)">LUGAR FÍSICO DE LA FISCALIZACIÓN</legend>
+      <div>
+        <label>BODEGA</label>
+        <input type="text" name="bodega">
+      </div>
+      <div>
+        <label>AERONAVE (compañía y matrícula)</label>
+        <input type="text" name="aeronave">
+      </div>
+      <div>
+        <label>OTRO</label>
+        <input type="text" name="otro">
+      </div>
+    </fieldset> <br>
+
+    <fieldset class="ventana">
+      <legend onclick="togContenido(this)">EMPRESA FISCALIZADA</legend>
+      <div>
+        <label for="empresa">NOMBRE</label>
+        <input type="text" name="empresa">
+      </div>
+      <div>
+        <label for="acreditacion">N° DE ACREDITACIÓN</label>
+        <input type="text" name="acreditacion">
+      </div>
+      <div>
+        <label for="telefono">TELÉFONO</label>
+        <input type="tel" name="telefono" value="9" maxlength="9" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+      </div>
+      <div>
+        <label for="email">EMAIL</label>
+        <input type="email" name="email">
+      </div>
+    </fieldset> <br>
+
+    <fieldset class="ventana">
+      <legend onclick="togContenido(this)">FISCALIZACIÓN DOCUMENTAL</legend>
+      <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+          <th>Documento</th>
+          <th>Sí</th>
+          <th>No</th>
+          <th>N/A</th>
+          <th>Hallazgos detectados</th>
+        </tr>
+        <tr>
+          <td>a) Guía Aérea, Factura, Orden de servicio</td>
+          <td><input type="radio" name="doc1" value="si"></td>
+          <td><input type="radio" name="doc1" value="no"></td>
+          <td><input type="radio" name="doc1" value="na"></td>
+          <td><input type="text" name="hallazgo1"></td>
+        </tr>
+        <tr>
+          <td>b) H.D.S</td>
+          <td><input type="radio" name="doc2" value="si"></td>
+          <td><input type="radio" name="doc2" value="no"></td>
+          <td><input type="radio" name="doc2" value="na"></td>
+          <td><input type="text" name="hallazgo2"></td>
+        </tr>
+        <tr>
+          <td>c) NOTOC</td>
+          <td><input type="radio" name="doc3" value="si"></td>
+          <td><input type="radio" name="doc3" value="no"></td>
+          <td><input type="radio" name="doc3" value="na"></td>
+          <td><input type="text" name="hallazgo3"></td>
+        </tr>
+        <tr>
+          <td>d) SHIPPER'S</td>
+          <td><input type="radio" name="doc4" value="si"></td>
+          <td><input type="radio" name="doc4" value="no"></td>
+          <td><input type="radio" name="doc4" value="na"></td>
+          <td><input type="text" name="hallazgo4"></td>
+        </tr>
+        <tr>
+          <td>e) LISTA DE CHEQUEO</td>
+          <td><input type="radio" name="doc5" value="si"></td>
+          <td><input type="radio" name="doc5" value="no"></td>
+          <td><input type="radio" name="doc5" value="na"></td>
+          <td><input type="text" name="hallazgo5"></td>
+        </tr>
+        <tr>
+          <td>f) OTROS</td>
+          <td><input type="radio" name="doc6" value="si"></td>
+          <td><input type="radio" name="doc6" value="no"></td>
+          <td><input type="radio" name="doc6" value="na"></td>
+          <td><input type="text" name="hallazgo6"></td>
+        </tr>
+      </table>
+    </fieldset> <br>
+
+    <fieldset class="ventana">
+      <legend onclick="togContenido(this)">FISCALIZACIÓN FÍSICA</legend>
+      <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+          <th>Observaciones en Fiscalización</th>
+          <th>Sí</th>
+          <th>No</th>
+          <th>N/A</th>
+          <th>Hallazgos detectados</th>
+        </tr>
+        <tr>
+          <td>a) Bultos deteriorados</td>
+          <td><input type="checkbox" name="chk1" value="si"></td>
+          <td><input type="checkbox" name="chk1" value="no"></td>
+          <td><input type="checkbox" name="chk1" value="na"></td>
+          <td><input type="text" name="obs1"></td>
+        </tr>
+        <tr>
+          <td>b) Con filtración, derrames o fugas</td>
+          <td><input type="checkbox" name="chk2" value="si"></td>
+          <td><input type="checkbox" name="chk2" value="no"></td>
+          <td><input type="checkbox" name="chk2" value="na"></td>
+          <td><input type="text" name="obs2"></td>
+        </tr>
+        <tr>
+          <td>c) Segregadas</td>
+          <td><input type="checkbox" name="chk3" value="si"></td>
+          <td><input type="checkbox" name="chk3" value="no"></td>
+          <td><input type="checkbox" name="chk3" value="na"></td>
+          <td><input type="text" name="obs3"></td>
+        </tr>
+        <tr>
+          <td>d) Etiquetadas</td>
+          <td><input type="checkbox" name="chk4" value="si"></td>
+          <td><input type="checkbox" name="chk4" value="no"></td>
+          <td><input type="checkbox" name="chk4" value="na"></td>
+          <td><input type="text" name="obs4"></td>
+        </tr>
+        <tr>
+          <td>e) Embalaje</td>
+          <td><input type="checkbox" name="chk5" value="si"></td>
+          <td><input type="checkbox" name="chk5" value="no"></td>
+          <td><input type="checkbox" name="chk5" value="na"></td>
+          <td><input type="text" name="obs5"></td>
+        </tr>
+        <tr>
+          <td>f) Las variaciones de los Estados se cumplen </td>
+          <td><input type="checkbox" name="chk6" value="si"></td>
+          <td><input type="checkbox" name="chk6" value="no"></td>
+          <td><input type="checkbox" name="chk6" value="na"></td>
+          <td><input type="text" name="obs6"></td>
+        </tr>
+        <tr>
+          <td>g) Se realizaron arreglos para sustancias de la Divsión 6.1, 4.1 y 5.2 </td>
+          <td><input type="checkbox" name="chk7" value="si"></td>
+          <td><input type="checkbox" name="chk7" value="no"></td>
+          <td><input type="checkbox" name="chk7" value="na"></td>
+          <td><input type="text" name="obs7"></td>
+        </tr>
+        <tr>
+          <td>h) Para bultos que contienen Dióxido de carbono sólido, se aplicaron requerimientos de: marcado,
+            etiquetado y documentos. </td>
+          <td><input type="checkbox" name="chk8" value="si"></td>
+          <td><input type="checkbox" name="chk8" value="no"></td>
+          <td><input type="checkbox" name="chk8" value="na"></td>
+          <td><input type="text" name="obs8"></td>
+        </tr>
+        <tr>
+          <td>i) Para bultos radioactivos se aplicaron las exigencias de marcado y etiquetado. </td>
+          <td><input type="checkbox" name="chk9" value="si"></td>
+          <td><input type="checkbox" name="chk9" value="no"></td>
+          <td><input type="checkbox" name="chk9" value="na"></td>
+          <td><input type="text" name="obs9"></td>
+        </tr>
+        <tr>
+          <td>j) Para los radioactivos, el control de la medición del bulto corresponde a lo declarado </td>
+          <td><input type="checkbox" name="chk10" value="si"></td>
+          <td><input type="checkbox" name="chk10" value="no"></td>
+          <td><input type="checkbox" name="chk10" value="na"></td>
+          <td><input type="text" name="obs10"></td>
+        </tr>
+        <tr>
+          <td>k) Los bultos están protegidos </td>
+          <td><input type="checkbox" name="chk11" value="si"></td>
+          <td><input type="checkbox" name="chk11" value="no"></td>
+          <td><input type="checkbox" name="chk11" value="na"></td>
+          <td><input type="text" name="obs11"></td>
+        </tr>
+        <tr>
+          <td>l) Los bultos tienen signos de manipulación indebida (sellos, roturas) </td>
+          <td><input type="checkbox" name="chk12" value="si"></td>
+          <td><input type="checkbox" name="chk12" value="no"></td>
+          <td><input type="checkbox" name="chk12" value="na"></td>
+          <td><input type="text" name="obs12"></td>
+        </tr>
+        <tr>
+          <td>m) El número de piezas coincide con la guía </td>
+          <td><input type="checkbox" name="chk13" value="si"></td>
+          <td><input type="checkbox" name="chk13" value="no"></td>
+          <td><input type="checkbox" name="chk13" value="na"></td>
+          <td><input type="text" name="obs13"></td>
+        </tr>
+        <tr>
+          <td>n) El peso corresponde a lo señalado en la guía </td>
+          <td><input type="checkbox" name="chk14" value="si"></td>
+          <td><input type="checkbox" name="chk14" value="no"></td>
+          <td><input type="checkbox" name="chk14" value="na"></td>
+          <td><input type="text" name="obs14"></td>
+        </tr>
+      </table>
+    </fieldset> <br>
+
+    <fieldset class="ventana">
+      <legend onclick="togContenido(this)">OTROS ANTECEDENTES</legend>
+      <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+          <th>ANTECEDENTES</th>
+          <th>Sí</th>
+          <th>No</th>
+        </tr>
+        <tr>
+          <td>a) Cuenta con programa de capacitación sobre mercancías peligrosas.</td>
+          <td><input type="checkbox" name="check1" value="si"></td>
+          <td><input type="checkbox" name="check1" value="no"></td>
+        </tr>
+        <tr>
+          <td>b) El personal se encuentra capacitado en Mercancías Peligrosas</td>
+          <td><input type="checkbox" name="check2" value="si"></td>
+          <td><input type="checkbox" name="check2" value="no"></td>
+        </tr>
+        <tr>
+          <td>c) El personal cuenta con capación en carga aérea</td>
+          <td><input type="checkbox" name="check3" value="si"></td>
+          <td><input type="checkbox" name="check3" value="no"></td>
+        </tr>
+        <tr>
+          <td>d) Mantiene copia actualizada del Programa de Seguridad, aprobada por la Autoridad Aeronáutica</td>
+          <td><input type="checkbox" name="check4" value="si"></td>
+          <td><input type="checkbox" name="check4" value="no"></td>
+        </tr>
+        <tr>
+          <td>e) La instalación cuenta con un área exclusiva para almacenar Mercancías Peligrosas</td>
+          <td><input type="checkbox" name="check5" value="si"></td>
+          <td><input type="checkbox" name="check5" value="no"></td>
+        </tr>
+        <tr>
+          <td>f) Cuenta con afiches o carteles en el área de recepción</td>
+          <td><input type="checkbox" name="check6" value="si"></td>
+          <td><input type="checkbox" name="check6" value="no"></td>
+        </tr>
+        <tr>
+          <td>g) Dispone del Manual de Instrucciones Técnicas</td>
+          <td><input type="checkbox" name="check7" value="si"></td>
+          <td><input type="checkbox" name="check7" value="no"></td>
+        </tr>
+      </table>
+    </fieldset> <br>
+
+    <fieldset class="ventana">
+      <legend onclick="togContenido(this)">OTRAS OBSERVACIONES</legend>
+      <textarea placeholder="Observaciones" rows="5" style="width: 100%;"></textarea>
+    </fieldset> <br>
+
+    <fieldset class="ventana">
+      <legend onclick="togContenido(this)">ADJUNTA INFORME AVSEC</legend>
+      <div class="informe">
+        <input type="radio" id="si" name="informe" value="si">
+        <label for="si" >SI</label>
+
+        <input type="radio" id="no" name="informe" value="no">
+        <label for="no">NO</label>
+
+        <input type="radio" id="na" name="informe" value="na">
+        <label for="na" style="align-content: center;">N/A</label>
+      </div>
+    </fieldset> <br>
+
+    <fieldset class="ventana" id="nomina">
+      <legend onclick="togContenido(this)">NÓMINA DEL PERSONAL AVSEC FISCALIZADOR</legend>
+      <div>
+        1.- <input type="text" name="persona¨[]" placeholder="Nombre y apellido"><br>
+        2.- <input type="text" name="persona¨[]" placeholder="Nombre y apellido"><br>
+        3.- <input type="text" name="persona¨[]" placeholder="Nombre y apellido"><br>
+      </div>
+      <button type="button" id="btnAgregar" onclick="agregarCampo()">➕ Agregar persona</button>
+    </fieldset> <br>
+
+    <fieldset class="ventana">
+      <legend onclick="togContenido(this)">FIRMA</legend>
+      <div class="firmas-container">
+
+        <!-- Firma izquierda -->
+        <div class="firma-box">
+          <canvas id="canvasFirma1"></canvas>
+          <div class="controls">
+            <button type="button" onclick="limpiarFirma('canvasFirma1')">Limpiar</button>
+          </div>
+          <input type="text" name="usuario[]" placeholder="Nombre y apellido">
+        </div>
+
+        <!-- Firma derecha -->
+        <div class="firma-box">
+          <canvas id="canvasFirma2"></canvas>
+          <div class="controls">
+            <button type="button" onclick="limpiarFirma('canvasFirma2')">Limpiar</button>
+          </div>
+          <input type="text" name="funcionario[]" placeholder="Nombre y apellido">
+        </div>
+
+      </div>
+    </fieldset>
+
+  </form>
+
+  <footer>
+  <button onclick="window.location.href='Home.html'"><span class="material-symbols-outlined">home</span>
+    Inicio</button>
+  <button type="submit" class="btn">Guardar Datos</button>
+  <button id="btnPDF" class="btn">Descargar en PDF</button>
+  </footer>
+
+
+  <!-- Librería jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Archivo JS propio -->
+  <script src="/JS/script.js"></script>
+
+</body>
+
+</html>

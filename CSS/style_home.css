@@ -1,0 +1,44 @@
+body {
+  background: radial-gradient(circle, #429cf5, #3535ee);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    gap: 50px;
+}
+
+.btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-top: 100px;
+}
+
+button{
+    padding: 10px 20px;
+    background-color: #6868d6;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 150%;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: linear-gradient(#429cf5, #1717df);
+}
+
+a{
+    text-align: center;
+}
